@@ -1,6 +1,7 @@
 <?php
     spl_autoload_register(function ($class) {
-        $arq = BASEDIR . '/' . $class . '.php';
+
+        $arq = BASEDIR . '/' . str_replace("\\", "/", $class) . '.php';
 
         if(file_exists($arq)) {
             include $arq;
